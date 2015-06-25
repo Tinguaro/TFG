@@ -1,0 +1,16 @@
+<form class="col-md-6 col-md-offset-2"><!--ng-submit="postTime()"-->
+	<p class="titleform">{{name}}</p>
+	<div class="form-group">
+		<label for="typetest">tipo de recomendación</label>
+		<select ng-model="datosform.typetest" id="#typetest">
+			<option ng-repeat="lib in whatlib">{{lib.option}}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="nameRepo">nombre del repositorio</label>
+		<select ng-model="datosform.namerepo" id="#nameRepo">
+			<option ng-repeat="lib in whatrepo">{{lib.option}}</option>
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">buscar</button>
+<form>

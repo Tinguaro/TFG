@@ -1,0 +1,13 @@
+{
+	"name" : "appTFG",
+	"version" : "0.0.1",
+	"dependencies" : {
+		"angular": "",
+		"angular" : "~1.2",
+		"angular-route": "~1.2",
+		"bootstrap": "",
+		"ng-grid": "",
+		"jquery-ui": "",
+		"angular-ui-sortable": ""
+	}
+}

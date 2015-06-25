@@ -1,0 +1,9 @@
+<div class="container" ng-controller="TestController">
+<div class="list col-md-6 col-md-offset-2">
+	<p class="titlelist">{{list.title}}<p>
+	<ul ui-sortable class="list-group">
+	  <li class="list-group-item" ng-repeat="item in list.items">{{item.name}} <i class="icono fa fa-frown-o"></i><i class="icono fa fa-smile-o"></i>
+	  </li>
+	</ul>
+</div>
+</div>

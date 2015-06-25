@@ -1,0 +1,9 @@
+<div class=" mean col-md-12" ng-controller="DetailController">
+	<p class="titlemeans">{{titlemeans}}<p>
+	<div class="mean thumbnail col-md-3" ng-repeat="mean in means">
+	  <img src="{{mean.url}}" alt="{{mean.url}}">
+	  <div class="caption">
+	     <p class="lorem">{{mean.lorem}}</p>
+	     </div>
+	</div>
+</div>
