@@ -3,7 +3,9 @@
 		<div class="col-md-12" ng-repeat="a in about">
 			<div class="col-md-8 col-md-offset-2">
 				<p class="titleabout">{{a.title}}</p>
-				<div class="html">{{a.html}}</div>
+				<div class="html lorem" ng-repeat="b in a.html">
+					<p>{{b}}</p>
+				</div>
 			</div>
 			<section class="fondo col-md-12"></section>
 		</div>

@@ -2,7 +2,7 @@
 	font-family: "echo";
 	src: url('../css/alpha_echo.ttf');
 }
-.fondo {
+.fondoInicio {
 	background-image:url('../img/paisaje.jpg');
 	background-size: 100% 100%;
 	background-position: 0px 0px;
@@ -10,6 +10,15 @@
 	background-attachment: fixed;
 	width:100% !important;
 	height:50px !important;
+}
+.fondo {
+	background-image:url('../img/paisaje.jpg');
+	background-size: 100% 100%;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width:100% !important;
+	height:150px !important;
 }
 .container {
 	width:100% !important;
@@ -124,7 +133,7 @@ padding: 2px !important;
 .titleabstract {
 	color:#337ab7;
 	font-family: "echo";
-	font-size:2em;
+	font-size:35px;
 }
 .abstract {
 	border:0px solid #000 !important;
@@ -138,7 +147,7 @@ padding: 2px !important;
 	text-align: center;
 	color:#337ab7;
 	font-family: "echo";
-	font-size:2em;
+	font-size:35px;
 }
 .mean {
 	padding:15px!important;
@@ -169,7 +178,8 @@ padding: 2px !important;
 	text-align: center;
 	color:#337ab7;
 	font-family: "echo";
-	font-size:2em;
+	font-size:35px;
+	background:#EEE;
 }
 
 /*learnmore*/
@@ -177,7 +187,7 @@ padding: 2px !important;
 	text-align: center;
 	color:#337ab7;
 	font-family: "echo";
-	font-size:2em;
+	font-size:35px;
 }
 
 .learnmorecontent, .learnmorecontent .thumbnail {
@@ -190,6 +200,7 @@ padding: 2px !important;
 /*lorem*/
 .lorem {
 	font-family:cursive !important;
+	font-size: 20px;
 }
 
 .row {
@@ -224,14 +235,14 @@ padding: 2px !important;
 	padding:0px !important;
 }
 .aboutproyect .html {
-	padding-bottom:30px !important;
+	padding:30px !important;
 	font-family: cursive !important;
 }
 .aboutproyect .titleabout {
 	padding-top:10px !important;
 	color:#337ab7;
 	font-family: "echo";
-	font-size:1.5em;	
+	font-size:35px;	
 }
 
 .icono {
