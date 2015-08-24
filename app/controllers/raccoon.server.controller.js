@@ -16,3 +16,9 @@ exports.doRecommendation = function(user, numberRecommend, callback){
 exports.doWatchedFor = function(name) {
 	raccoon.watchedFor(name);
 }
+exports.deleteKey = function() {
+	raccoon.deleteKey();
+}
+exports.bestRated = function(callback) {
+	raccoon.bestRated(callback);
+}

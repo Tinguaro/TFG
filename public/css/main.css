@@ -2,6 +2,10 @@
 	font-family: "echo";
 	src: url('../css/alpha_echo.ttf');
 }
+.tabletest {
+	height: 500px !important;
+}
+
 .fondoInicio {
 	background-image:url('../img/paisaje.jpg');
 	background-size: 100% 100%;

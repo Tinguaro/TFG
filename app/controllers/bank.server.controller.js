@@ -15,7 +15,23 @@ exports.init = function(npeople, nitems, nmitems) {
 		bank.push(row);
 	}
 
-	console.log(bank);
+}
+
+exports.initJSON = function(npeople, nitems, nmitems) {
+	var row = '[';
+	for (var i = 0; i < npeople; ++i) {
+		for(var j = 0; j < nitems; ++j){
+			if (Math.random() > 0.5) {
+				row += '{"nameperson":"person'+i+'", "nameitem":"item' + j + '", "score": '+ parseInt(""+(Math.random()*5)) + '},';
+			}
+		}
+	}
+	if(row[row.length - 1] == ',')
+		row = row.slice(0, row.length - 1);
+	row += "]";
+
+	bank = JSON.parse(row);
+
 }
 
 exports.getBank = function() {

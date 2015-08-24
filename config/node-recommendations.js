@@ -1,23 +1,25 @@
 nodeRecommendations = require('node-recommendations');
 /* RACCOON */
 module.exports = {
-	
+	r : '',
+	people : '',
+	peoplesearch : '',
+
 	create : function(name, options) {
-		nodeRecommendations.create(name, options);
-		console.log("CREATE NAMESPACING");
+		r = nodeRecommendations.create(name, options);
 	},
 
 	createPerson : function(nameuser, id) {
-		return nodeRecommendations.addPeople(nameuser, id);
+		people = r.addPeople(nameuser, id);
 	},
 
 	/* sin id*/
-	addItem : function(user, nameitem, score) {
-		user.addItem(nameitem, score);
+	addItem : function(nameitem, score) {
+		people.addItem(nameitem, score);
 	},
 
 	calculateSim : function() {
-		nodeRecommendations.calculateItemsim(function(err, res){
+		r.calculateItemsim(function(err, res){
 			if (err) {
 				console.log('Error for calculateSim');
 			} else {
@@ -27,12 +29,14 @@ module.exports = {
 	},
 	
 	getPerson : function(name) {
-		return nodeRecommendations.getPeopleByName(name);
+		peoplesearch = r.getPeopleByName(name);
+		console.log("PEOPLE SEARCHED with name " + name + " peoplesearch " + peoplesearch);
+
 	},
 	
 
-	recommendations : function(person) {
-		person.getRecommendations();
+	recommendations : function() {
+		peoplesearch.getRecommendations();
 	}
 
 }

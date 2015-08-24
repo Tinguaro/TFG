@@ -10,44 +10,67 @@ exports.init = function() {
 		correlation: 'distance',
 		redisClient: null
 	});*/
-	testbank.init(3,5,6);
+
+	//testbank.initJSON(3,5,6);
 }
-
-exports.newBank = function(npeople, nitems, mitems) {
-
+exports.returnBank = function(req, res) {
+	res.send(testbank.getBank());
 }
-
-
-exports.load = function() {
-	bank = testbank.getBank();
-	name = "";
-	item = "";
-	var items;
-	score = 0;
-	for(var i in bank) {
-		name = bank[i].split(';')[0];
-		items = (bank[i].split(';')[1]).split('CRTI');
-		for (var j in items) {
-			if(items[j].length != 0) {
-				item = items[j].split('CRT')[0];
-				score = items[j].split('CRT')[1];
-				/* RACCOON*/
-				console.log(name + "    " + item + "    " + score);
-				raccoon.doLiked(name, item, function(){return 0;});
-			}
+exports.newBank = function(req, res, npeople, nitems, mitems) {
+	
+	/* remove data redis */
+	var keys = testbank.getBank();
+	if (keys) {
+		for (var k in keys) {
+			raccoon.deleteKey();
 		}
 	}
 
+	testbank.initJSON(npeople,nitems,mitems);
+	bank = testbank.getBank();
+	score = 0;
+	var person = "";
+	for(var i in bank) {
+		/* RACCOON*/
+		raccoon.doLiked(bank[i]['nameperson'], bank[i]['nameitem'], function(){return 0;});
+	}
+	res.send(testbank.getBank());
+}
+
+exports.load = function() {
+	bank = testbank.getBank();
+	score = 0;
+	var person = "";
+	for(var i in bank) {
+		/* RACCOON*/
+		raccoon.doLiked(bank[i]['nameperson'], bank[i]['nameitem'], function(){return 0;});
+	}
 }
 
 
-exports.test = function() {
+exports.test = function(req, res, nameperson, namelib, size) {
 	/* RACCOON TEST */
 	/*raccoon.doWatchedFor('person-0');
 	raccoon.doWatchedFor('person-1');
 	raccoon.doWatchedFor('person-2');
-	*/raccoon.test('person-0',5, function(results){
-	console.log('RECOMMENDATIONS');
-	console.log(results);
+	*/
+	raccoon.test(nameperson,size - 1, function(results){
+		result = {
+			'name' : nameperson,
+			'data' : results,
+			'bestdata' : []
+		}
+
+		raccoon.bestRated(function(results){
+			result['bestdata'] = results;
+			res.send(result);
+		});
 	});
+
+	/*test node-recommendations*/
+	/*nodeRecommendations.calculateSim();
+	nodeRecommendations.getPerson('person0');
+	nodeRecommendations.getRecommendations();*/
+
+
 }

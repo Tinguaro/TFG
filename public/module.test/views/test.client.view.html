@@ -1,11 +1,11 @@
-<section class="row test">
-	<section ng-controller="TestController" class="row interface" ng-include="'module.test/views/interface.test.client.view.html'">
+<section ng-controller="TestController"  class="row test">
+	<section class="row interface">
+		<div class="col-md-5 col-md-offset-1" ng-include="'module.test/views/interface.createbank.test.client.view.html'"></div>
+		<div class="col-md-5 col-md-offset-1" ng-include="'module.test/views/interface.search.test.client.view.html'"></div>
 	</section>
 
-	<section class="row" ng-include="'module.test/views/list.test.client.view.html'">
-	</section>
-
-	<section class="row table">
-		<div ng-controller="TestController" ng-include="'module.test/views/table.test.client.view.html'"></div>
+	<section class="row">
+		<div class="col-md-5 col-md-offset-1" ng-include="'module.test/views/table.test.client.view.html'"></div>
+		<div class="col-md-5 col-md-offset-1" ng-include="'module.test/views/list.test.client.view.html'"></div>
 	</section>
 </section>

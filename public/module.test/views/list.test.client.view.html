@@ -1,9 +1,16 @@
-<div class="container" ng-controller="TestController">
-<div class="list col-md-6 col-md-offset-2">
-	<p class="titlelist">{{list.title}}<p>
-	<ul ui-sortable class="list-group">
-	  <li class="list-group-item" ng-repeat="item in list.items">{{item.name}} <i class="icono fa fa-frown-o"></i><i class="icono fa fa-smile-o"></i>
-	  </li>
-	</ul>
-</div>
+<div class="container">
+	<div class="list col-xs-12 col-sm-12 col-md-12">
+		<p class="titlelist">{{list.titlelist}}<p>
+		<ul ui-sortable ng-model="list" class="list-group">
+		  <li class="list-group-item" ng-repeat="item in list.items">{{item}} <i class="icono fa fa-frown-o"></i><i class="icono fa fa-smile-o"></i>
+		  </li>
+		</ul>
+	</div>
+	<div class="list col-xs-12 col-sm-12 col-md-12">
+		<p class="titlelist">{{list.titlebestlist}}<p>
+		<ul ng-model="list" class="list-group">
+		  <li class="list-group-item" ng-repeat="item in list.bestitems | limitTo:5">{{item}} <i class="icono fa fa-smile-o"></i>
+		  </li>
+		</ul>
+	</div>
 </div>
