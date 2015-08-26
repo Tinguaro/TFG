@@ -25,13 +25,12 @@ exports.newBank = function(req, res, npeople, nitems, mitems) {
 			raccoon.deleteKey();
 		}
 	}
-
 	testbank.initJSON(npeople,nitems,mitems);
 	bank = testbank.getBank();
 	score = 0;
 	var person = "";
 	for(var i in bank) {
-		/* RACCOON*/
+		/* RACCOON */
 		raccoon.doLiked(bank[i]['nameperson'], bank[i]['nameitem'], function(){return 0;});
 	}
 	res.send(testbank.getBank());
