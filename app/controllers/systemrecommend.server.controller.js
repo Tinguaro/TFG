@@ -22,7 +22,7 @@ exports.newBank = function(req, res, npeople, nitems, mitems) {
 	var keys = testbank.getBank();
 	if (keys) {
 		for (var k in keys) {
-			raccoon.deleteKey();
+			raccoon.doDisLiked(keys[k]['nameperson'], keys[k]['nameitem'], function(){return 0;});
 		}
 	}
 	testbank.initJSON(npeople,nitems,mitems);

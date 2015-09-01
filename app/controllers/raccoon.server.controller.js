@@ -6,9 +6,11 @@ exports.connect = function() {
 exports.test = function(name, numberRecommend, callback) {
 	raccoon.recommendations(name,numberRecommend, callback);
 }
-
 exports.doLiked = function(user, item, callback) {
 	raccoon.liked(user, item, callback);
+}
+exports.doDisLiked = function(user, item, callback) {
+	raccoon.disliked(user, item, callback);
 }
 exports.doRecommendation = function(user, numberRecommend, callback){
 	raccoon.recommendations(user, numberRecommend, callback);
